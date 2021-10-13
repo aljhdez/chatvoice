@@ -29,7 +29,7 @@ strategies: # Cosas para resolver. Similares a funciones.
 script: # Lo que ejecutará chatvoice
   - solve welcome
   - loop_slots
-  - set_slot ignore "Ignora este mensaje"
+  - set_slot ignore "ignora este mensaje"
   - execute print(f"Por favor, {self.slots['ignore']}.")
   - say "Puedo darte un consejo segun tu estado de animo"
   - say "¿Como te sientes hoy?"
