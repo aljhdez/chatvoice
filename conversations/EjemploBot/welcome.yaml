@@ -1,5 +1,7 @@
 dbs: # Variables guardadas/conocimiento del chatbot
   main: import_csv data.csv
+  other: import_csv other.csv
 
 script:
   - say "{}, {} {}.".format(*db['main'][0])
+  - say "{}.".format(*db["other"][1])
