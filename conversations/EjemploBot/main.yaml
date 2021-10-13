@@ -16,6 +16,7 @@ strategies: # Cosas para resolver. Similares a funciones.
     - input name
     - say f"Gusto en conocerte {name}, ¿cual es tu edad?"
     - input age | number
+    - execute print("Yo soy "+self.settings['name'])
 
   happy:
     - answers.execute("happy")
