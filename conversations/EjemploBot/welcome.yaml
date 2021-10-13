@@ -2,4 +2,4 @@ dbs: # Variables guardadas/conocimiento del chatbot
   main: import_csv data.csv
 
 script:
-  - say "{}, {}.".format(*db['main'][0])
+  - say "{}, {} {}.".format(*db['main'][0])
