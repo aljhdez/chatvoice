@@ -1,0 +1,29 @@
+settings: # Configuraciones para el chatbot
+  name: Bot consejero
+
+conversations: # Se importan otros archivos de conversación para usarse
+  - "welcome.yaml"
+
+plugins:
+  - answers
+
+slots: # Información que se necesita llenar/preguntar al usuario
+  - personal_data
+
+strategies: # Cosas para resolver. Similares a funciones.
+  personal_data:
+      - say "¿Como te llamas?"
+      - input name
+      - say f"Gusto en conocerte {name}, ¿cual es tu edad?"
+      - input age
+
+script: # Lo que ejecutará chatvoice
+  solve welcome
+  loop_slots
+  say "Puedo darte un consejo segun tu estado de animo"
+  say "¿Como te sientes hoy?"
+  input mood | asign feliz:happy triste:sad enojado:angry
+  if mood == "happy" then answers.execute("happy")
+  if mood == "sad" then answers.execute("sad")
+  if mood == "angry" then answers.execute("angry")
+  say f"Espero haberte ayudado. Adios {name}"

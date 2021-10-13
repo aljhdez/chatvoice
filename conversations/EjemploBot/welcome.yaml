@@ -1,0 +1,5 @@
+dbs: # Variables guardadas/conocimiento del chatbot
+  main: import_csv data.csv
+
+script:
+  - say f"{*db['main'][0]}, {*db['main'][1]}"
