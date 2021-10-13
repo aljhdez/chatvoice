@@ -17,14 +17,22 @@ strategies: # Cosas para resolver. Similares a funciones.
       - say f"Gusto en conocerte {name}, ¿cual es tu edad?"
       - input age
 
+  happy:
+    - answers.execute("happy")
+
+  sad:
+    - answers.execute("sad")
+
+  angry:
+    - answers.execute("angry")
+
 script: # Lo que ejecutará chatvoice
   - solve welcome
   - loop_slots
   - say "Puedo darte un consejo segun tu estado de animo"
   - say "¿Como te sientes hoy?"
   - input mood | asign feliz:happy triste:sad enojado:angry
-  - answers.execute("happy")
-  - if mood == "happy" then answers.execute("happy")
-  - if mood == "sad" then answers.execute("sad")
-  - if mood == "angry" then answers.execute("angry")
+  - if mood == "happy" then solve happy
+  - if mood == "sad" then solve sad
+  - if mood == "angry" then solve angry
   - say f"Espero haberte ayudado. Adios {name}."
