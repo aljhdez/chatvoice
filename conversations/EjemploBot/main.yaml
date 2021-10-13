@@ -32,7 +32,7 @@ script: # Lo que ejecutará chatvoice
   - say "Puedo darte un consejo segun tu estado de animo"
   - say "¿Como te sientes hoy?"
   - input mood | asign feliz:happy triste:sad enojado:angry
-  - if mood == "happy" then solve happy
+  - if mood == "happy" answers.execute("happy")
   - if mood == "sad" then solve sad
   - if mood == "angry" then solve angry
   - say f"Espero haberte ayudado. Adios {name}."
