@@ -15,7 +15,7 @@ strategies: # Cosas para resolver. Similares a funciones.
     - say "¿Como te llamas?"
     - input name
     - say f"Gusto en conocerte {name}, ¿cual es tu edad?"
-    - input age | number
+    - input age
 
   happy:
     - answers.execute("happy")
