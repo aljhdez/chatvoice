@@ -1,6 +1,7 @@
 import random
 
-def execute(mood):
+def execute(arg):
+    mood = arg
     if mood == "happy":
         advice = random.choice(["Feliz 1",
                                 "Feliz 2",
@@ -14,4 +15,4 @@ def execute(mood):
                                 "Enojado 2",
                                 "Enojado 3"])
 
-    return f"say '{advice}'"
+    return f'say "{advice}"'

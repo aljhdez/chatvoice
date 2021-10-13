@@ -22,8 +22,8 @@ script: # Lo que ejecutará chatvoice
   - loop_slots
   - say "Puedo darte un consejo segun tu estado de animo"
   - say "¿Como te sientes hoy?"
-  - input mood | asign feliz:happy triste:sad enojado:angry
-  - if mood == "happy" then solve answers.execute("happy")
+  - input mood | asign feliz:happy triste:sad
+  - if mood == "happy" then answers.execute("happy")
   - if mood == "sad" then answers.execute("sad")
   - if mood == "angry" then answers.execute("angry")
   - say f"Espero haberte ayudado. Adios {name}."
