@@ -16,7 +16,6 @@ strategies: # Cosas para resolver. Similares a funciones.
     - input name
     - say f"Gusto en conocerte {name}, ¿cual es tu edad?"
     - input age | number
-    - execute pair=age%2
 
   happy:
     - answers.execute("happy")
@@ -30,7 +29,6 @@ strategies: # Cosas para resolver. Similares a funciones.
 script: # Lo que ejecutará chatvoice
   - solve welcome
   - loop_slots
-  - if pair == 0 then say "Una edad interesante."
   - say "Puedo darte un consejo segun tu estado de animo"
   - say "¿Como te sientes hoy?"
   - input mood | asign feliz:happy triste:sad enojado:angry
