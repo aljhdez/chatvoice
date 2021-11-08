@@ -2,10 +2,11 @@
 
 import pandas as pd
 
-texto = pd.read_csv("user_data.csv")
+def execute():
+	texto = pd.read_csv("/home/aljhdez/CV/chatvoice/conversations/Ejemplo2/user_data.csv")
 
-if texto.iloc[0,0] == "nuevo":
-	texto.iloc[0,0] = "conocido"
-	return "solve usuario_nuevo"
-else:
-	return "solve bienvenida"
+	if texto.iloc[0,0] == "nuevo":
+		texto.iloc[0,0] = "conocido"
+		return "solve usuario_nuevo"
+	else:
+		return "solve bienvenida"

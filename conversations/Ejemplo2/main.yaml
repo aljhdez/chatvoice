@@ -19,4 +19,4 @@ strategies:
     - say "Usuario viejo"
 
 script:
-  solve existing_user
+  - solve existing_user
