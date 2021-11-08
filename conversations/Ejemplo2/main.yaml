@@ -1,0 +1,22 @@
+settings: 
+  name: Bot
+
+# conversations:
+
+plugins:
+  - user_data
+
+# slots:
+
+strategies:
+  existing_user:
+    - user_data.execute()
+
+  usuario_nuevo:
+    - say "Usuario nuevo"
+
+  bienvenida:
+    - say "Usuario viejo"
+
+script:
+  solve existing_user
