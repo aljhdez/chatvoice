@@ -7,6 +7,8 @@ def execute():
 
 	if texto.iloc[0,0] == "nuevo":
 		texto.iloc[0,0] = "conocido"
+		texto.to_csv("/home/aljhdez/CV/chatvoice/conversations/Ejemplo2/user_data.csv", index = False)
 		return "solve usuario_nuevo"
+
 	else:
-		return "solve bienvenida"
+		return "solve bienvenida"s
